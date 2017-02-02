@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LG - Color Picker Challenge</title>
+
+    <link rel="stylesheet" href="main.css" media="screen" charset="utf-8">
+  <style id="jsbin-css">
+button {
+  min-width: 3em;
+  min-height: 3em;
+  border-radius: 1.5em;
+}
+
+.rainbow {
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+section {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+section.selected {
+  border-style: transparent;
+  border-width: 0;
+}
+
+div.subsection {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+
+.red {
+  background-color: red;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.indigo {
+  background-color: indigo;
+}
+
+.violet {
+  background-color: violet;
+}
+
+.text-chocolate {
+  background-color: chocolate;
+}
+
+.text-goldenrod {
+  background-color: goldenrod;
+}
+
+.text-dodgerblue {
+  background-color: dodgerblue;
+}
+
+.text-yellowgreen {
+  background-color: yellowgreen;
+}
+
+.text-darkorchid {
+  background-color: darkorchid;
+}
+
+.text-peachpuff {
+  background-color: peachpuff;
+}
+
+.text-tomato {
+  background-color: tomato;
+}
+
+.color0 { 
+  background-color: #FFA07A; 
+}
+
+.color1 { 
+  background-color: #FA8072;
+}
+
+.color2 { 
+  background-color: #E9967A;
+}
+
+.color3 { 
+  background-color: #F08080;
+}
+
+.color4 {
+  background-color: #CD5C5C;
+}
+
+.color5 {
+  background-color: #DC143C;
+}
+
+.color6 {
+  background-color: #FF0000;
+}
+
+.color7 {
+  background-color: #B22222;
+}
+
+.color8 {
+  background-color: #8B0000;
+}
+</style>
+</head>
+  
+ 
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<body>
+<header>
+<div style="text-align:center;">  
+<h1 <div><span class="rainbow">ROY G BIV SELECTOR</span></div></h1>
+</div>
+</header>
+    
+    
+      <section>
+      <div style="text-align:center;">
+      <h2>The Full Rainbow</h2>
+      <button class="red" onClick="setColor('red');"></button>
+      <button class="orange" onClick="setColor('orange');"></button>
+      <button class="yellow" onClick="setColor('yellow');"></button>
+      <button class="green" onClick="setColor('green');"></button>
+      <button class="blue" onClick="setColor('blue');"></button>
+      <button class="indigo" onClick="setColor('indigo');"></button>
+      <button class="violet" onClick="setColor('violet');"></button>
+      </div>
+      </section>
+    
+        
+   <section>
+    <div style="text-align:center;"> 
+    <h3>Change the color this text!</h3>
+    <button class="text-chocolate" onClick="setTextColor('CHOCOLATE');"></button>
+    <button class="text-goldenrod" onClick="setTextColor('GOLDENROD');"></button>
+    <button class="text-dodgerblue" onClick="setTextColor('DODGERBLUE');"></button>
+    <button class="text-yellowgreen" onClick="setTextColor('YELLOWGREEN');"></button>
+    <button class="text-darkorchid" onClick="setTextColor('DARKORCHID');"></button>
+    <button class="text-peachpuff" onClick="setTextColor('PEACHPUFF');"></button>
+    <button class="text-tomato" onClick="setTextColor('TOMATO');"></button>
+    </div>
+    </section>
+    
+    <section>
+    <div style="text-align:center;">
+    <h4>Harmonious Text Pallette!</h4>
+    <button class="color0" onClick="setColor('#FFA07A');"></button>
+    <button class="color1" onClick="setColor('#FA8072');"></button>
+    <button class="color2" onClick="setColor('#E9967A');"></button>
+    <button class="color3" onClick="setColor('#F08080');"></button>
+    <button class="color4" onClick="setColor('#CD5C5C');"></button>
+    <button class="color5" onClick="setColor('#DC143C');"></button>
+    <button class="color6" onClick="setColor('#FF0000');"></button>
+    <button class="color7" onClick="setColor('#B22222');"></button>
+    <button class="color8" onClick="setColor('#8B0000');"></button>  
+    </div>
+</section>
+
+   <script type="text/javascript" src="script.js"></script>
+  <script id="jsbin-javascript">
+function setColor(color) {
+
+var body = document.querySelector("body");
+
+body.style.background = color;
+
+}
+
+// Set color of <h3> on page
+
+function setTextColor(color)
+{
+var text = document.querySelector("h3");
+text.style.color = color;
+}
+
+// Get all h3 elements and add event listeners. When clicked, use 
+// the color selected in section 5 to change the text color.
+
+var h3List = document.querySelectorAll("h3");
+for(var i = 0; i < h3List.length; i++) 
+{
+h3List[i].addEventListener("click", function() {
+var color = document.querySelector("#choose-color").value;
+this.style.color = color;
+});
+}
+
+
+var sectionList = document.querySelectorAll("section");
+var selected = null;
+
+for(var i = 0; i < sectionList.length; i++)
+{
+sectionList[i].addEventListener("click", function() {
+if(this.className === "selected")
+{
+this.className = "";
+selected = null;
+}
+else 
+{
+if(selected != null)
+selected.className = "";
+this.className = "selected";
+selected = this;
+}
+});
+}
+</script>
+
+<script id="jsbin-source-html" type="text/html"><!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LG - Color Picker Challenge</title>
+
+    <link rel="stylesheet" href="main.css" media="screen" charset="utf-8">
+  </head>
+  
+ 
+<script src="https://code.jquery.com/jquery.min.js"><\/script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<body>
+<header>
+<div style="text-align:center;">  
+<h1 <div><span class="rainbow">ROY G BIV SELECTOR</span></div></h1>
+</div>
+</header>
+    
+    
+      <section>
+      <div style="text-align:center;">
+      <h2>The Full Rainbow</h2>
+      <button class="red" onClick="setColor('red');"></button>
+      <button class="orange" onClick="setColor('orange');"></button>
+      <button class="yellow" onClick="setColor('yellow');"></button>
+      <button class="green" onClick="setColor('green');"></button>
+      <button class="blue" onClick="setColor('blue');"></button>
+      <button class="indigo" onClick="setColor('indigo');"></button>
+      <button class="violet" onClick="setColor('violet');"></button>
+      </div>
+      </section>
+    
+        
+   <section>
+    <div style="text-align:center;"> 
+    <h3>Change the color this text!</h3>
+    <button class="text-chocolate" onClick="setTextColor('CHOCOLATE');"></button>
+    <button class="text-goldenrod" onClick="setTextColor('GOLDENROD');"></button>
+    <button class="text-dodgerblue" onClick="setTextColor('DODGERBLUE');"></button>
+    <button class="text-yellowgreen" onClick="setTextColor('YELLOWGREEN');"></button>
+    <button class="text-darkorchid" onClick="setTextColor('DARKORCHID');"></button>
+    <button class="text-peachpuff" onClick="setTextColor('PEACHPUFF');"></button>
+    <button class="text-tomato" onClick="setTextColor('TOMATO');"></button>
+    </div>
+    </section>
+    
+    <section>
+    <div style="text-align:center;">
+    <h4>Harmonious Text Pallette!</h4>
+    <button class="color0" onClick="setColor('#FFA07A');"></button>
+    <button class="color1" onClick="setColor('#FA8072');"></button>
+    <button class="color2" onClick="setColor('#E9967A');"></button>
+    <button class="color3" onClick="setColor('#F08080');"></button>
+    <button class="color4" onClick="setColor('#CD5C5C');"></button>
+    <button class="color5" onClick="setColor('#DC143C');"></button>
+    <button class="color6" onClick="setColor('#FF0000');"></button>
+    <button class="color7" onClick="setColor('#B22222');"></button>
+    <button class="color8" onClick="setColor('#8B0000');"></button>  
+    </div>
+</section>
+
+   <script type="text/javascript" src="script.js"><\/script>
+  </body>
+
+</html>
+</script>
+
+<script id="jsbin-source-css" type="text/css">button {
+  min-width: 3em;
+  min-height: 3em;
+  border-radius: 1.5em;
+}
+
+.rainbow {
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+section {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+section.selected {
+  border-style: transparent;
+  border-width: 0;
+}
+
+div.subsection {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+
+.red {
+  background-color: red;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.indigo {
+  background-color: indigo;
+}
+
+.violet {
+  background-color: violet;
+}
+
+.text-chocolate {
+  background-color: chocolate;
+}
+
+.text-goldenrod {
+  background-color: goldenrod;
+}
+
+.text-dodgerblue {
+  background-color: dodgerblue;
+}
+
+.text-yellowgreen {
+  background-color: yellowgreen;
+}
+
+.text-darkorchid {
+  background-color: darkorchid;
+}
+
+.text-peachpuff {
+  background-color: peachpuff;
+}
+
+.text-tomato {
+  background-color: tomato;
+}
+
+.color0 { 
+  background-color: #FFA07A; 
+}
+
+.color1 { 
+  background-color: #FA8072;
+}
+
+.color2 { 
+  background-color: #E9967A;
+}
+
+.color3 { 
+  background-color: #F08080;
+}
+
+.color4 {
+  background-color: #CD5C5C;
+}
+
+.color5 {
+  background-color: #DC143C;
+}
+
+.color6 {
+  background-color: #FF0000;
+}
+
+.color7 {
+  background-color: #B22222;
+}
+
+.color8 {
+  background-color: #8B0000;
+}
+</script>
+
+<script id="jsbin-source-javascript" type="text/javascript">function setColor(color) {
+
+var body = document.querySelector("body");
+
+body.style.background = color;
+
+}
+
+// Set color of <h3> on page
+
+function setTextColor(color)
+{
+var text = document.querySelector("h3");
+text.style.color = color;
+}
+
+// Get all h3 elements and add event listeners. When clicked, use 
+// the color selected in section 5 to change the text color.
+
+var h3List = document.querySelectorAll("h3");
+for(var i = 0; i < h3List.length; i++) 
+{
+h3List[i].addEventListener("click", function() {
+var color = document.querySelector("#choose-color").value;
+this.style.color = color;
+});
+}
+
+
+var sectionList = document.querySelectorAll("section");
+var selected = null;
+
+for(var i = 0; i < sectionList.length; i++)
+{
+sectionList[i].addEventListener("click", function() {
+if(this.className === "selected")
+{
+this.className = "";
+selected = null;
+}
+else 
+{
+if(selected != null)
+selected.className = "";
+this.className = "selected";
+selected = this;
+}
+});
+}
+
+</script></body>
+
+</html>

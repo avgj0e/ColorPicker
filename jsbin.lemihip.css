@@ -1,0 +1,121 @@
+button {
+  min-width: 3em;
+  min-height: 3em;
+  border-radius: 1.5em;
+}
+
+.rainbow {
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+section {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+section.selected {
+  border-style: transparent;
+  border-width: 0;
+}
+
+div.subsection {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+
+.red {
+  background-color: red;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.indigo {
+  background-color: indigo;
+}
+
+.violet {
+  background-color: violet;
+}
+
+.text-chocolate {
+  background-color: chocolate;
+}
+
+.text-goldenrod {
+  background-color: goldenrod;
+}
+
+.text-dodgerblue {
+  background-color: dodgerblue;
+}
+
+.text-yellowgreen {
+  background-color: yellowgreen;
+}
+
+.text-darkorchid {
+  background-color: darkorchid;
+}
+
+.text-peachpuff {
+  background-color: peachpuff;
+}
+
+.text-tomato {
+  background-color: tomato;
+}
+
+.color0 { 
+  background-color: #FFA07A; 
+}
+
+.color1 { 
+  background-color: #FA8072;
+}
+
+.color2 { 
+  background-color: #E9967A;
+}
+
+.color3 { 
+  background-color: #F08080;
+}
+
+.color4 {
+  background-color: #CD5C5C;
+}
+
+.color5 {
+  background-color: #DC143C;
+}
+
+.color6 {
+  background-color: #FF0000;
+}
+
+.color7 {
+  background-color: #B22222;
+}
+
+.color8 {
+  background-color: #8B0000;
+}
